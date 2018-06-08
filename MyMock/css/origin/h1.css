@@ -1,0 +1,37 @@
+h1 {
+	background: #c2edff; /*背景色*/
+	padding: 30px; /*文字の余白*/
+}
+
+h4 {
+	padding: 30px;
+}
+
+.yohaku-area {
+	padding: 120px;
+}
+
+.yokonarabi-area {
+	display: inline-block;
+}
+
+.tyuo-area {
+	text-align: center;
+}
+
+.mini-yohaku-area {
+	padding: 30px;
+}
+.yohaku70-area{
+	padding: 70px;
+}
+
+.yohaku10-area {
+	padding: 10px;
+}
+.dekaimoji{
+	font-size:200%
+}
+.dekaiyohaku{
+	padding: 200px;
+}
