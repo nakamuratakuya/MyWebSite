@@ -1,0 +1,30 @@
+CREATE DATABASE j_db
+DEFAULT CHARACTER SET utf8;
+
+CREATE TABLE player_table(
+	id SERIAL,
+	name varchar(256) NOT NULL,
+	icon VARCHAR(256)
+);
+
+create table syouhai_table(
+	id SERIAL,
+	user_id int(20) NOT NULL,
+	yakusyoku_id int(20) NOT NULL,
+	winresult int(11) NOT NULL
+);
+
+CREATE TABLE yakusyoku_table(
+	id SERIAL,
+	name VARCHAR(256) NOT NULL,
+	side int(20) NOT NULL,
+	detail text NOT NULL,
+	comment text 
+);
+
+INSERT INTO yakusyoku_table (name,side,detail,comment)
+VALUES
+	('市民',0,"特記事項なし","貴様にできる事は何もない、村の片隅でガタガタ震えているがよい!!!!")
+	,('人狼',1,"自分の仲間を確認することができる","おやおや人狼ですか、吊るされないように気を付けてくださいねｗｗｗ")
+	,('占い師',0,"選択したプレイヤーか墓地の役職を知ることができる","占い師ってゲームのキーマンですけどあなたで大丈夫ですか？？？")
+	;

@@ -1,0 +1,28 @@
+CREATE DATABASE j_db
+DEFAULT CHARACTER SET utf8;
+
+create table game_table(
+	id SERIAL,
+	winside varchar(20) NOT NULL,
+	play_date DATETIME NOT NULL
+);
+
+CREATE TABLE player_table(
+	id INT(11) PRIMARY KEY AUTO_INCREMENT,
+	game_id INT(11) NOT NULL,
+	name varchar(255) NOT NULL,
+	yakusyoku_id INT(11) NOT NULL
+);
+
+CREATE TABLE yakusyoku_table(
+	id INT(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	name VARCHAR(20) NOT NULL,
+	side VARCHAR(20) NOT NULL
+);
+
+INSERT INTO yakusyoku_table (name,side)
+VALUES
+	('ésñØ','ésñØë§')
+	,('êlòT','êlòTë§')
+	,('êËÇ¢ét','ésñØë§')
+	;
