@@ -14,9 +14,9 @@
 				<li class="nav-item active">Jinrou</li>
 			</ul>
 			<span class="navbar-text">
-				<a href="#">
+				<a href="Index">
 					<font size ="2" color="#f0f8ff">
-						りんくにしておいてね
+						りんくにしたよ
 					</font>
 				</a>
 			</span>

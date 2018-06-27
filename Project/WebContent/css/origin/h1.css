@@ -1,5 +1,4 @@
 h1 {
-	background: #c2edff; /*背景色*/
 	padding: 30px; /*文字の余白*/
 }
 
@@ -34,4 +33,17 @@ h4 {
 }
 .dekaiyohaku{
 	padding: 200px;
+}
+
+.img-icon {
+	max-height: 50px;
+}
+
+body {
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-image: url("../../img/1433277142-891666-kittens-with-blue-eyes-pgB2-1536x864-MM-100 - コピー.jpg");
+	background-color :#a9a9a9;
+	/* background-image: url("../../gif/");
+ */
 }
