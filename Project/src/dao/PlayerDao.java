@@ -58,24 +58,19 @@ public class PlayerDao {
 		try {
 			// データベースへ接続
 			con = DBManager.getConnection();
-			System.out.println();
 			// SELECT文を準備
-			//出来れば名前だけでも登録できるように
-			//できねこれ？？？登録できるくね？？？
-			String sql =null;
+			String sql ="INSERT INTO player_table(name,icon) VALUES(?,?)";
 			System.out.println("dao1");
 			/*if(!icon.equals("")) {*/
-				sql="INSERT INTO player_table(name,icon) VALUES(?,?)";
+				/*sql="INSERT INTO player_table(name,icon) VALUES(?,?)";*/
 			/*}
 			else {
 				sql ="INSERT INTO player_table(name) VALUES(?)";
 			}*/
-				System.out.println("dao2");
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1,name);
 			pstmt.setString(2,icon);
 			pstmt.executeUpdate();
-			System.out.println("dao3");
 			return true;
 
 		}catch(SQLException e){
@@ -90,7 +85,6 @@ public class PlayerDao {
 					e.printStackTrace();
 				}
 			}
-			System.out.println("dao4");
 		}
 
 	}

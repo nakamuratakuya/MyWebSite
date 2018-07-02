@@ -67,8 +67,33 @@ public class Index extends HttpServlet {
 		for(String id : playerId) {
 			System.out.println(id);
 			Player player = pd.selectId(id);
+
 			inPlayerList.add(player);
 		}
+
+		/*Shuffle shuffle = new Shuffle();
+		List<Yakusyoku> yakusyokuList = new ArrayList<Yakusyoku>();
+		yakusyokuList =  shuffle.yakusyokuShuffle(inPlayerList.size());
+
+		for(Player player :inPlayerList) {
+			player.setyId(yakusyokuList.get(0).getId());
+			player.setyName(yakusyokuList.get(0).getName());
+			player.setyComment(yakusyokuList.get(0).getComment());
+			player.setyIcon(yakusyokuList.get(0).getIcon());
+			yakusyokuList.remove(0);
+			System.out.println(player.getyName()+"player");
+		}
+
+		List<Boti> botiList = new ArrayList<Boti>();
+		Boti boti = new Boti();
+
+		for(Yakusyoku yakusyoku :yakusyokuList) {
+		   boti.setName(yakusyoku.getName());
+		   botiList.add(boti);
+			System.out.println(boti.getName()+"boti");
+		}
+
+		session.setAttribute("botiList", botiList);*/
 		session.setAttribute("inPlayerList",inPlayerList);
 		response.sendRedirect("inPlayer");
 	}

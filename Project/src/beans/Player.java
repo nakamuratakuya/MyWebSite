@@ -5,8 +5,11 @@ public class Player {
 	private String name;
 	private String icon;
 
-	private int yakusyokuId;
-
+	private int yId;
+	private String yName;
+	private String yComment;
+	private String yIcon;
+	private String yDetail;
 	private int gamecount;
 	private int wincount;
 
@@ -27,14 +30,6 @@ public class Player {
 		return icon;
 	}
 
-	public int getYakusyokuId() {
-		return yakusyokuId;
-	}
-
-	public void setYakusyokuId(int yakusyokuId) {
-		this.yakusyokuId = yakusyokuId;
-	}
-
 
 	public int getGamecount() {
 		return gamecount;
@@ -53,6 +48,58 @@ public class Player {
 
 	public void setWincount(int wincount) {
 		this.wincount = wincount;
+	}
+
+
+
+
+	public int getyId() {
+		return yId;
+	}
+
+
+	public void setyId(int yId) {
+		this.yId = yId;
+	}
+
+
+	public String getyName() {
+		return yName;
+	}
+
+
+	public void setyName(String yName) {
+		this.yName = yName;
+	}
+
+
+	public String getyComment() {
+		return yComment;
+	}
+
+
+	public void setyComment(String yComment) {
+		this.yComment = yComment;
+	}
+
+
+	public String getyIcon() {
+		return yIcon;
+	}
+
+
+	public void setyIcon(String yIcon) {
+		this.yIcon = yIcon;
+	}
+
+
+	public String getyDetail() {
+		return yDetail;
+	}
+
+
+	public void setyDetail(String yDetail) {
+		this.yDetail = yDetail;
 	}
 
 }

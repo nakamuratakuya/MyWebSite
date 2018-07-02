@@ -59,9 +59,12 @@
 		</tbody>
 	</table>
 		<div class="mini-yohaku-area"></div>
-		<p align="center">
-			<a class="btn btn-danger" href="#" role="button">お、やんのか？？？</a>
-		</p>
+		<form method="post" action="inPlayer">
+			<p align="center">
+				<input type="submit" class="btn btn-danger" value="お、やんのか？？？">
+					<!--  <a class="btn btn-danger" href="PlayerKakunin" role="button">お、やんのか？？？</a> -->
+				</p>
+		</form>
 
 	</div>
 </body>

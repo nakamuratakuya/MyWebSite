@@ -1,14 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Uranaisi</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/origin/h1.css">
+<link rel="stylesheet" type="text/css" href="css/origin/color.css">
 </head>
 <body>
+<jsp:include page="/baselayout/header.jsp" />
 	<div class="container">
-		<p>playernameさんの役職は</p>
-		<p>player.YakusyokuNameです</p>
+		<p>${plyer.name}さんの役職は</p>
+		<p>${player.yName}です</p>
 		<p>誰を占いますか？</p>
 		<table class="table table-striped table-dark">
 				<thead>
@@ -36,7 +43,6 @@
 				</tbody>
 		</table>
 		<a class="btn btn-primary"href="#"role="button">占う</a>
-		<a class="btn btn-primary"href="file:///C:/Users/gunka/Documents/MyWebSite/MyMock/UranaiKekka.html"role="button">rink</a>
 	</div>
 </body>
 </html>
