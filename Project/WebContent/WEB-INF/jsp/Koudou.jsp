@@ -7,12 +7,15 @@
 <meta charset="UTF-8">
 <title>Koudou</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/origin/h1.css">
+<link rel="stylesheet" type="text/css" href="css/origin/color.css">
+
 </head>
 <body>
 <jsp:include page="/baselayout/header.jsp" />
 	<div class="container">
 
-		<p>${player.Name}さんの役職は${player.yname}です</p>
+		<p>${player.name}さんの役職は${player.yName}です</p>
 		<p><img class="img-icon" src="img/${player.yIcon}"></p>
 		<p>${player.yComment}</p>
 		<a class="btn btn-primary"href="PlayerKekka"role="button">ok!!</a>

@@ -60,9 +60,10 @@ public class inPlayer extends HttpServlet {
 		}
 
 		List<Boti> botiList = new ArrayList<Boti>();
-		Boti boti = new Boti();
+
 
 		for(Yakusyoku yakusyoku :ShuffledYakusyokuList) {
+		   Boti boti = new Boti();
 		   boti.setName(yakusyoku.getName());
 		   botiList.add(boti);
 			System.out.println(boti.getName()+"boti");

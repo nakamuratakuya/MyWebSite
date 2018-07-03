@@ -29,7 +29,6 @@ public class YakusyokuDao {
 				String detail = rs.getString("detail");
 				String comment = rs.getString("comment");
 				String icon = rs.getString("icon");
-				System.out.println(id+name+icon);
 				Yakusyoku yakusyoku = new Yakusyoku(id, name, side, detail, comment, icon);
 				yakusyokuList.add(yakusyoku);
 
@@ -74,7 +73,6 @@ public class YakusyokuDao {
 			String detail = rs.getString("detail");
 			String comment = rs.getString("comment");
 			String icon = rs.getString("icon");
-			System.out.println(id+name+icon);
 			Yakusyoku simin = new Yakusyoku(id, name, side, detail, comment, icon);
 			return simin;
 		}catch (SQLException e) {
@@ -114,7 +112,6 @@ public class YakusyokuDao {
 			String detail = rs.getString("detail");
 			String comment = rs.getString("comment");
 			String icon = rs.getString("icon");
-			System.out.println(id+name+icon);
 			Yakusyoku jinrou = new Yakusyoku(id, name, side, detail, comment, icon);
 
 			return jinrou;
@@ -154,7 +151,6 @@ public class YakusyokuDao {
 			String detail = rs.getString("detail");
 			String comment = rs.getString("comment");
 			String icon = rs.getString("icon");
-			System.out.println(id+name+icon);
 			Yakusyoku uranaisi = new Yakusyoku(id, name, side, detail, comment, icon);
 
 			return uranaisi;
@@ -189,7 +185,6 @@ public class YakusyokuDao {
 			String detail = rs.getString("detail");
 			String comment = rs.getString("comment");
 			String icon = rs.getString("icon");
-			System.out.println(id+name+icon);
 			Yakusyoku yakusyoku = new Yakusyoku(id, name, side, detail, comment, icon);
 
 			return yakusyoku;

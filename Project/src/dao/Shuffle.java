@@ -35,23 +35,20 @@ public class Shuffle {
 	            System.out.println("エラー");
 	        }
 
-		   System.out.println(s +j +u);
+
 
 		   List<Yakusyoku> yakusyokuList = new ArrayList<Yakusyoku>();
  		   for(int i = 0; i < s ;i++) {
  			   YakusyokuDao yd = new YakusyokuDao();
  			   yakusyokuList.add(yd.getSimin());
- 			   System.out.println(yakusyokuList.size());
  		   }
  		   for(int i = 0; i < j ;i++) {
 			   YakusyokuDao yd = new YakusyokuDao();
 			   yakusyokuList.add(yd.getJinrou());
-			   System.out.println(yakusyokuList.size());
  		   }
  		   for(int i = 0; i < u ;i++) {
 			   YakusyokuDao yd = new YakusyokuDao();
 			   yakusyokuList.add(yd.getUranaisi());
-			   System.out.println(yakusyokuList.size());
  		   }
  		   Collections.shuffle(yakusyokuList);
 

@@ -1,6 +1,7 @@
 package jinrou;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -34,9 +35,11 @@ public class PlayerKekka extends HttpServlet {
 		HttpSession session = request.getSession();
 		/*Player player = (Player)session.getAttribute("palyer");*/
 		List<Player> inPlayerList = (List<Player>)session.getAttribute("inPlayerList");
+		List<Player> jinrouList = new ArrayList<Player>();
 		for(Player player : inPlayerList) {
 			if(player.getyName().equals("人狼")) {
-				request.setAttribute("jinrou", player);
+				jinrouList.add(player);
+				request.setAttribute("jinrouList", jinrouList);
 			}
 		}
 		request.getRequestDispatcher("/WEB-INF/jsp/PlayerKekka.jsp").forward(request, response);

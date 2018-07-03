@@ -28,7 +28,6 @@ public class PlayerDao {
 				int id = rs.getInt("id");
 				String name = rs.getString("name");
 				String icon = rs.getString("icon");
-				System.out.println(id+name+icon);
 				Player player = new Player(id,name,icon);
 				playerList.add(player);
 
