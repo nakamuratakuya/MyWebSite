@@ -39,7 +39,7 @@ public class PlayerKakunin extends HttpServlet {
 		System.out.println(voteFrg);
 		if(voteFrg!=null) {
 			if(i==inPlayerList.size()) {
-				request.getRequestDispatcher("/WEB-INF/jsp/#.jsp").forward(request, response);
+				response.sendRedirect("VoteResult");
 				return;
 			}
 		}

@@ -7,12 +7,12 @@ import java.util.List;
 import beans.Yakusyoku;
 
 public class Shuffle {
-	public List<Yakusyoku> yakusyokuShuffle(int Listsize) {
+	public List<Yakusyoku> yakusyokuShuffle(int inPlayerListSize) {
 		int s = 1;
 		int j = 2;
 		int u = 2;
 
-		   switch (Listsize) {
+		   switch (inPlayerListSize) {
 		   	case 3:
 		   		break;
 	        case 4:

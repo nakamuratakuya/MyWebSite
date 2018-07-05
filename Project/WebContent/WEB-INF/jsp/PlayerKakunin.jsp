@@ -16,10 +16,10 @@
 		<P>${player.name}さんでよろしいですか？？？</P>
 		<p><img class="img-icon" src="img/${player.icon}" alt="No img"></p>
 		<c:if test="${voteFrg!=null}">
-			<a class="btn btn-primary"href="vote"role="butten">vote!!</a>
+			<a class="btn btn-primary"href="Vote"role="butten">vote!!</a>
 		</c:if>
 		<c:if test="${voteFrg==null}">
-		<a class="btn btn-primary"href="Koudou"role="butten">yes!!</a>
+			<a class="btn btn-primary"href="Koudou"role="butten">yes!!</a>
 		</c:if>
 	</div>
 </body>

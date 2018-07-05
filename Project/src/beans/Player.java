@@ -10,8 +10,12 @@ public class Player {
 	private String yComment;
 	private String yIcon;
 	private String yDetail;
+
+	private int votedCount;
+	private int votePlayerId;
 	private int gamecount;
 	private int wincount;
+
 
 	public Player(int id, String name, String icon) {
 		this.id = id;
@@ -100,6 +104,26 @@ public class Player {
 
 	public void setyDetail(String yDetail) {
 		this.yDetail = yDetail;
+	}
+
+
+	public int getVotedCount() {
+		return votedCount;
+	}
+
+
+	public void setVotedCount() {
+		this.votedCount++;
+	}
+
+
+	public int getVotePlayerId() {
+		return votePlayerId;
+	}
+
+
+	public void setVotePlayerId(int votePlayerId) {
+		this.votePlayerId = votePlayerId;
 	}
 
 }

@@ -38,7 +38,8 @@ public class inPlayer extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-
+		session.removeAttribute("voteFrg");
+		session.removeAttribute("tousenPlayerList");
 		List<Player> inPlayerList = (List<Player>)session.getAttribute("inPlayerList");
 
 		List<Yakusyoku> yakusyokuList = new ArrayList<Yakusyoku>();
