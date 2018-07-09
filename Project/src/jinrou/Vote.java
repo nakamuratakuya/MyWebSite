@@ -42,23 +42,24 @@ public class Vote extends HttpServlet {
 	 */
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		Player player = (Player) session.getAttribute("player");
 		PlayerDao pd = new PlayerDao();
 		List<Player> inPlayerList = (List<Player>) session.getAttribute("inPlayerList");
-		String playerid = request.getParameter("playerId");
+		String playerName = request.getParameter("playerName");
 
 		//得票数のカウント
 		for(Player votedPlayer :inPlayerList) {
-			if(votedPlayer.getId()==Integer.parseInt(playerid)) {
+			if(votedPlayer.getName().equals(playerName)) {
 				votedPlayer.setVotedCount();
 			}
 		}
 
 		//投票先を登録
 		for(Player votePlayer : inPlayerList) {
-			if(votePlayer.getId()==player.getId()) {
-				votePlayer.setVotePlayerId(Integer.parseInt(playerid));
+			if(votePlayer.getName().equals(player.getName())) {
+				votePlayer.setVotePlayerName(playerName);
 			}
 		}
 

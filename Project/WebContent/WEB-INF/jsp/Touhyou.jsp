@@ -28,7 +28,7 @@
 						<!--人数分ループ -->
 							<c:forEach var="player" items="${inPlayerList}" >
 								<tr>
-									<th><input type="radio" name=playerId value="${player.id}"></th>
+									<th><input type="radio" name=playerName value="${player.name}"></th>
 									<th scope="row">${player.name}</th>
 									<td><img class="img-icon" src="img/${player.icon}" alt="No img"></td>
 								</tr>

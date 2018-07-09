@@ -12,7 +12,7 @@ public class Player {
 	private String yDetail;
 
 	private int votedCount;
-	private int votePlayerId;
+	private String votePlayerName;
 	private int gamecount;
 	private int wincount;
 
@@ -117,13 +117,13 @@ public class Player {
 	}
 
 
-	public int getVotePlayerId() {
-		return votePlayerId;
+	public String getVotePlayerName() {
+		return votePlayerName;
 	}
 
 
-	public void setVotePlayerId(int votePlayerId) {
-		this.votePlayerId = votePlayerId;
+	public void setVotePlayerName(String votePlayerId) {
+		this.votePlayerName = votePlayerId;
 	}
 
 }
