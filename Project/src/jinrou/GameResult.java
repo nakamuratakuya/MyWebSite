@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import beans.Player;
+import dao.gameResultDao;
 
 /**
  * Servlet implementation class GameResult
@@ -19,58 +20,92 @@ import beans.Player;
 public class GameResult extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public GameResult() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public GameResult() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		List<Player> inPlayerList = (List<Player>) session.getAttribute("inPlayerList");
 		List<Player> tousenPlayerList = (List<Player>) session.getAttribute("tousenPlayerList");
 		//勝敗判定　
-		boolean  civilianWin = true;
 
-		for (Player player : inPlayerList) {
+		//市民勝利ならtrue
+		boolean civilianWin = false;
 
-			//プレイヤーの中に人狼がいるかつ平和村
-			if(player.getyId() == 2 && tousenPlayerList == null) {
-				civilianWin = false;
-				break;
-			}
+		//吊るされる人がいる場合true
+		boolean executeFrg = false;
 
-			//プレイヤーの中に人狼がいない場合かつ処刑されるひとがいる
-			else if (player.getyId() == 2 && tousenPlayerList!=null) {
-				for (Player tousenPlayer : tousenPlayerList) {
-					if (tousenPlayer.getyId() == 2) {
-						civilianWin = true;
-						break;
-					}
-				}
-			}else {
-				civilianWin = false;
-				break;
+		//プレイヤーの中に人狼ｈがいる場合true
+		boolean jinrouExistence = false;
+
+		//playerに人狼がいるかの確認
+		for(Player player : inPlayerList) {
+			if(player.getyId()==2) {
+				jinrouExistence = true;
 			}
 		}
 
-		if(civilianWin) {
+		//吊るされた人がいるかの確認
+		if(tousenPlayerList!=null){
+			executeFrg = true;
+		}
+
+		//吊るされる人がいるかつプレイヤーに人狼がいる
+		if(executeFrg  && jinrouExistence){
+			for(Player tousenPlayer : tousenPlayerList){
+				if(tousenPlayer.getyId()==2){
+					civilianWin = true;
+				}
+			}
+		}
+		else if(!executeFrg && !jinrouExistence){
+			civilianWin = true;
+		}
+
+		if (civilianWin) {
 			request.setAttribute("winSide", "市民側の勝利!!!");
-		}else {
+		} else {
 			request.setAttribute("winSide", "人狼側の勝利!!!");
 		}
+
+
+		//リザルトの登録
+
+		//登録の準備
+		gameResultDao grd = new gameResultDao();
+
+		//勝った場合１負けたら０
+		int winResult;
+
+		//登録
+		for(Player player :inPlayerList) {
+			if(civilianWin && player.getyId()!=2) {
+				winResult = 1;
+			}else if(!civilianWin && player.getyId()==2) {
+				winResult = 1;
+			}else {
+				winResult = 0;
+			}
+			grd.registGameResult(player.getId(), player.getyId(), winResult);
+		}
+
 		request.getRequestDispatcher("/WEB-INF/jsp/GameResult.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 	}
 

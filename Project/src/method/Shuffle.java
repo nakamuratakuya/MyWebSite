@@ -1,10 +1,11 @@
-package dao;
+package method;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import beans.Yakusyoku;
+import dao.YakusyokuDao;
 
 public class Shuffle {
 	public List<Yakusyoku> yakusyokuShuffle(int inPlayerListSize) {
@@ -31,9 +32,11 @@ public class Shuffle {
 	        	s += 2;
 	        	j += 1;
 	        	u += 1;
+	        	break;
 	        default:
 	            System.out.println("エラー");
-	        }
+	            break;
+		   }
 
 
 

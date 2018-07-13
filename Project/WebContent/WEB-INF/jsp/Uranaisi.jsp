@@ -30,11 +30,13 @@
 						<tbody>
 						<!--人数分ループ -->
 							<c:forEach var="player" items="${inPlayerList}" >
-								<tr>
-									<th><input type="radio" value="${player.id}" name=playerId></th>
-									<td>${player.name}</td>
-									<th scope="row"><img class="img-icon" src="img/${player.icon}" alt="No img"></th>
-								</tr>
+								<c:if test="${player.id != sessionScope.player.id}">
+									<tr>
+										<th><input type="radio" value="${player.id}" name=playerId></th>
+										<td>${player.name}</td>
+										<th scope="row"><img class="img-icon" src="img/${player.icon}" alt="No img"></th>
+									</tr>
+								</c:if>
 							</c:forEach>
 						<!-- ループ終了 -->
 							<tr>

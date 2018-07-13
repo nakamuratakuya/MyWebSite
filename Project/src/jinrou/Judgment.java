@@ -15,14 +15,14 @@ import beans.Player;
 /**
  * Servlet implementation class SyokeiOrHeiwa
  */
-@WebServlet("/SyokeiOrHeiwa")
-public class SyokeiOrHeiwa extends HttpServlet {
+@WebServlet("/Judgment")
+public class Judgment extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SyokeiOrHeiwa() {
+    public Judgment() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -46,7 +46,7 @@ public class SyokeiOrHeiwa extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		
+
 	}
 
 }

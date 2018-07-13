@@ -33,7 +33,6 @@ public class VoteResult extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession  session = request.getSession();
-		/*session.removeAttribute("voteFrg");*/
 		List<Player> inPlayerList = (List<Player>) session.getAttribute("inPlayerList");
 		List<Player> tousenPlayerList = new ArrayList<Player>();
 		//最多票を取った人をリスト化（複数居る場合複数処刑）

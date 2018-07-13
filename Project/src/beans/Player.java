@@ -54,9 +54,6 @@ public class Player {
 		this.wincount = wincount;
 	}
 
-
-
-
 	public int getyId() {
 		return yId;
 	}
@@ -112,8 +109,12 @@ public class Player {
 	}
 
 
-	public void setVotedCount() {
-		this.votedCount++;
+	public void setVotedCount(int i) {
+		if(i==0) {
+			this.votedCount++;
+		}else {
+			this.votedCount=0;
+		}
 	}
 
 

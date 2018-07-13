@@ -34,13 +34,7 @@ public class Info extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-	/*   Object status = session.getAttribute("userInfo");
 
-	    if (status == null){
-	    	response.sendRedirect("LoginServlet");
-	    	return;
-	    }
-	*/
 		String id = request.getParameter("id");
 
 		PlayerDao pd = new PlayerDao();

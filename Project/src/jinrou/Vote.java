@@ -52,7 +52,7 @@ public class Vote extends HttpServlet {
 		//得票数のカウント
 		for(Player votedPlayer :inPlayerList) {
 			if(votedPlayer.getName().equals(playerName)) {
-				votedPlayer.setVotedCount();
+				votedPlayer.setVotedCount(0);
 			}
 		}
 

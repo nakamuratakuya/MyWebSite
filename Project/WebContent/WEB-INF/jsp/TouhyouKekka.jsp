@@ -14,7 +14,7 @@
 	<jsp:include page="/baselayout/header.jsp" />
 	<div class="container">
 		<p>player全員の投票が完了しました</p>
-			<a class="btn btn-primary"href="SyokeiOrHeiwa"role="butten">ok!!</a>
+			<a class="btn btn-primary"href="Judgment"role="butten">ok!!</a>
 	</div>
 </body>
 </html>

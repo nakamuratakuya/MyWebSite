@@ -37,6 +37,7 @@ public class PlayerKakunin extends HttpServlet {
 		int i = I.intValue();
 		String voteFrg = (String)session.getAttribute("voteFrg");
 		System.out.println(voteFrg);
+
 		if(voteFrg!=null) {
 			if(i==inPlayerList.size()) {
 				response.sendRedirect("VoteResult");
@@ -50,7 +51,7 @@ public class PlayerKakunin extends HttpServlet {
 		}
 
 		Player player = inPlayerList.get(i);
-		I+=1;
+		I++;
 		session.setAttribute("player", player);
 		session.setAttribute("i", I);
 		request.getRequestDispatcher("/WEB-INF/jsp/PlayerKakunin.jsp").forward(request, response);

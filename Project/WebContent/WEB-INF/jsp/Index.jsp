@@ -65,8 +65,7 @@
 						<td>${player.name}</td>
 						<td><img class="img-icon" src="img/${player.icon}" alt="No img"></td>
 						<td><a class="btn btn-primary" href="Info?id=${player.id}" role="button">info</a>
-							<a class="btn btn-success" href="#" role="button">update</a> <a
-							class="btn btn-danger" href="Delete?id=${player.id}" role="button">delete</a></td>
+							<a class="btn btn-danger" href="Delete?id=${player.id}" role="button">delete</a></td>
 					</tr>
 					</c:forEach>
 					<!-- ループ終了 -->

@@ -59,13 +59,7 @@ public class PlayerDao {
 			con = DBManager.getConnection();
 			// SELECT文を準備
 			String sql ="INSERT INTO player_table(name,icon) VALUES(?,?)";
-			System.out.println("dao1");
-			/*if(!icon.equals("")) {*/
-				/*sql="INSERT INTO player_table(name,icon) VALUES(?,?)";*/
-			/*}
-			else {
-				sql ="INSERT INTO player_table(name) VALUES(?)";
-			}*/
+
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1,name);
 			pstmt.setString(2,icon);
@@ -95,7 +89,17 @@ public class PlayerDao {
 			conn = DBManager.getConnection();
 
 			// SELECT文を準備
-			String sql = "SELECT * FROM player_table WHERE id = ?";
+			String sql = "select t1.id, t1.name, t1.icon, "
+						+"count(t2.player_id) as game_count,"
+						+" ifnull(sum(t2.winresult),0) as win_count"
+						+" from player_table as t1 "
+						+"left outer join syouhai_table as t2 on t1.id  = t2.player_id "
+						+"where t1.id = ? "
+						+"group by t1.id "
+						+"order by t1.id";
+
+
+
 			// SELECTを実行し、結果表を取得
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, Id);
@@ -109,6 +113,8 @@ public class PlayerDao {
 			String name = rs.getString("name");
 			String icon = rs.getString("icon");
 			Player player = new Player(id,name,icon);
+			player.setGamecount(rs.getInt("game_count"));
+			player.setWincount(rs.getInt("win_count"));
 			return player;
 		}
 

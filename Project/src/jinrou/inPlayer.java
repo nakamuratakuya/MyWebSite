@@ -15,8 +15,8 @@ import javax.servlet.http.HttpSession;
 import beans.Boti;
 import beans.Player;
 import beans.Yakusyoku;
-import dao.Shuffle;
 import dao.YakusyokuDao;
+import method.Shuffle;
 
 /**
  * Servlet implementation class inPlayer
@@ -42,6 +42,13 @@ public class inPlayer extends HttpServlet {
 		session.removeAttribute("tousenPlayerList");
 		List<Player> inPlayerList = (List<Player>)session.getAttribute("inPlayerList");
 
+		//得票数やらのリセット
+		for(Player player : inPlayerList) {
+			player.setVotePlayerName(null);
+			player.setVotedCount(1);
+		}
+
+		//必要数の役職をリスト化しシャッフル
 		List<Yakusyoku> yakusyokuList = new ArrayList<Yakusyoku>();
 		YakusyokuDao yd = new YakusyokuDao();
 		yakusyokuList = yd.findAll();
@@ -50,6 +57,7 @@ public class inPlayer extends HttpServlet {
 		List<Yakusyoku> ShuffledYakusyokuList = new ArrayList<Yakusyoku>();
 		ShuffledYakusyokuList =  shuffle.yakusyokuShuffle(inPlayerList.size());
 
+		//役職の振分け
 		for(Player player :inPlayerList) {
 			player.setyId(ShuffledYakusyokuList.get(0).getId());
 			player.setyName(ShuffledYakusyokuList.get(0).getName());
@@ -59,9 +67,9 @@ public class inPlayer extends HttpServlet {
 			ShuffledYakusyokuList.remove(0);
 			System.out.println(player.getyName()+"player");
 		}
-
+		
+		//墓地を用意
 		List<Boti> botiList = new ArrayList<Boti>();
-
 
 		for(Yakusyoku yakusyoku :ShuffledYakusyokuList) {
 		   Boti boti = new Boti();
