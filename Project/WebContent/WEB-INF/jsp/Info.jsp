@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>users info</title>
+<title> info</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/origin/color.css">
 <link rel="stylesheet" type="text/css" href="css/origin/h1.css">
@@ -16,43 +16,36 @@
 
 		<div class="alert alert-primary" role="alert">
 
-			<%-- <p align="right">
-				 ${sessionScope.userInfo.loginId} san<a
-					href="LogoutServlet"
-					class="alert-link"><span style="margin-right: 12em;"></span>ログアウト</a>
-				 --%>
 
 			<h1 align="center">player information</h1>
 
-			<div>
-				<h4 style="float: left;">player ID</h4>
-				<h4 style="text-align: center">${player.id}</h4>
-			</div>
-			<div style="clear: both;"></div>
 
-			<div>
-				<h4 style="float: left;">player name</h4>
-				<h4 style="text-align: center">${player.name}</h4>
-			</div>
-			<div style="clear: both;"></div>
+			 <div class="row justify-content-around">
+			    <div class="col-4" align="center">
+			    	<h4>PLAYER NAME</h4>
+			  		<h4>${player.name}</h4>
+				 </div>
+				 <div class="col-4" align="center">
+			    	<h4>PLAYER ID</h4>
+			  		<h4>${player.id}</h4>
+				 </div>
+			 </div>
 
-			<div>
-				<h4 style="float: left;">ゲーム参加回数</h4>
-				<h4 style="text-align: center;" id="g">${player.gamecount}</h4>
-			</div>
-			<div style="clear: both;"></div>
+			<div class="mini-yohaku-area" ></div>
 
-			<div>
-				<h4 style="float: left;">優勝回数</h4>
-				<h4 style="text-align: center;" id="w">${player.wincount}</h4>
-			</div>
-			<div style="clear: both;"></div>
-
-			<div>
-
-				<h4 style="float: left;">勝率</h4>
-				<h4 style="text-align: center;">
-					<script type="text/javascript">
+			 <div class="row justify-content-around">
+			    <div class="col-4" align="center">
+			    	<h4>GAME COUNT</h4>
+			  		<h4 id="g">${player.gamecount}</h4>
+				 </div>
+				 <div class="col-4" align="center">
+			    	<h4>WIN COUNT</h4>
+			  		<h4 id="w">${player.wincount}</h4>
+				 </div>
+				 <div class="col-4" align="center">
+			    	<h4>WIN PERCENT</h4>
+			  		<h4>
+			  		<script type="text/javascript">
 						elemW = document.getElementById("w");
 						elemG = document.getElementById("g");
 
@@ -73,10 +66,13 @@
 							document.write(a);
 						}
 					</script>
-					%
-				</h4>
-			</div>
-			<div style="clear: both;"></div>
+						%
+			  		</h4>
+				 </div>
+			 </div>
+
+			<div class="mini-yohaku-area" ></div>
+
 			<a
 				href="Index">"戻る"
 			</a>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>regist</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/origin/h1.css">
@@ -12,22 +12,22 @@
 <body>
 	<jsp:include page="/baselayout/header.jsp" />
 	<div class="container ">
-	<div class="backgroud-area">
-		<h3>プレイヤー新規登録</h3>
-		<p align="right">
-			<a href="Index">"戻る"</a>
-		</p>
-	</div>
+		<div class="backgroud-area">
+			<h3>プレイヤー新規登録</h3>
+			<p align="right">
+				<a href="Index">"戻る"</a>
+			</p>
+		</div>
 
 		<c:if test="${errMsg != null}">
-				<div class="alert alert-danger" role="alert">${errMsg}</div>
-			</c:if>
+			<div class="alert alert-danger" role="alert">${errMsg}</div>
+		</c:if>
 
 		<div class="yohaku10-area"></div>
-		<form method="post" action="Regist">
+		<form method="post" enctype="multipart/form-data" action="Regist">
 
 			<label for="playername">player  name</label>
-			<input class="form-control" type="text"  required name="name" placeholder="your  name" >
+			<input id="playername" class="form-control" type="text" name="name" placeholder="your name" required>
 
 			<div class="mini-yohaku-area"></div>
 
@@ -44,3 +44,4 @@
 	</div>
 
 </body>
+</html>

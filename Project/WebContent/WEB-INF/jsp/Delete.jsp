@@ -14,16 +14,6 @@
 <body>
 	<jsp:include page="/baselayout/header.jsp" />
 	<div class="container">
-
-		<!-- 111111 -->
-		<%-- <div class="username-area">
-			<p align="right">
-				  ${sessionScope.userInfo.loginId}  san<a
-					href="LogoutServlet"
-					class="alert-link"><span style="margin-right: 12em;"></span>ログアウト</a>
-		</div> --%>
-
-		<!-- 222222 -->
 		<div class="background-denger">
 			<h1 align="center">player Delete</h1>
 
