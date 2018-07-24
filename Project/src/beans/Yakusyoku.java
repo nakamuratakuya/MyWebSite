@@ -11,9 +11,11 @@ public class Yakusyoku {
 	public Yakusyoku(int id,String name,int side,String detail, String comment, String icon) {
 		this.id = id;
 		this.name = name;
+		
 		if(side==0) {
 			this.side = "市民側";
 		}
+		
 		else if(side==1) {
 			this.side = "人狼側";
 		}

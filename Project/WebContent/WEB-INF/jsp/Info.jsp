@@ -17,7 +17,7 @@
 		<div class="alert alert-primary" role="alert">
 
 
-			<h1 align="center">player information</h1>
+			<h1 align="center">PLAYER STATS</h1>
 
 
 			 <div class="row justify-content-around">
@@ -45,28 +45,28 @@
 				 <div class="col-4" align="center">
 			    	<h4>WIN PERCENT</h4>
 			  		<h4>
-			  		<script type="text/javascript">
-						elemW = document.getElementById("w");
-						elemG = document.getElementById("g");
-
-						var contentW = elemW.innerHTML;
-						var contentG = elemG.innerHTML;
-
-						var w = Number(contentW);
-						var g = Number(contentG);
-
-						var result = w / g * 10000;
-						result = Math.floor(result);
-						var a = result / 100;
-
-						if(w == 0){
-							document.write(0);
-						}
-						else{
-							document.write(a);
-						}
-					</script>
-						%
+				  		<script type="text/javascript">
+							elemW = document.getElementById("w");
+							elemG = document.getElementById("g");
+	
+							var contentW = elemW.innerHTML;
+							var contentG = elemG.innerHTML;
+	
+							var w = Number(contentW);
+							var g = Number(contentG);
+	
+							var result = w / g * 10000;
+							result = Math.floor(result);
+							var a = result / 100;
+	
+							if(w == 0){
+								document.write(0);
+							}
+							else{
+								document.write(a);
+							}
+						</script>
+							%
 			  		</h4>
 				 </div>
 			 </div>

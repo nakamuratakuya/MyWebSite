@@ -35,7 +35,7 @@
 								<tr>
 									<th></th>
 									<th>${boti.name}</th>
-									<td>表示できなくは無いが面倒だからしない</td>
+									<td><img class="img-icon" src="img/${boti.icon}"></td>
 									<th scope="row"></th>
 								</tr>
 							</c:forEach>

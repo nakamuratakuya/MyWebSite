@@ -67,6 +67,7 @@ public class GameResult extends HttpServlet {
 				}
 			}
 		}
+		
 		else if(!executeFrg && !jinrouExistence){
 			civilianWin = true;
 		}

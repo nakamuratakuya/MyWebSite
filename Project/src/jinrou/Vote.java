@@ -48,11 +48,16 @@ public class Vote extends HttpServlet {
 		PlayerDao pd = new PlayerDao();
 		List<Player> inPlayerList = (List<Player>) session.getAttribute("inPlayerList");
 		String playerName = request.getParameter("playerName");
-
+		//投票せれていない場合
+		if(playerName==null) {
+			request.setAttribute("errMsg", "投票するプレイヤーを選択してください");
+			request.getRequestDispatcher("/WEB-INF/jsp/Touhyou.jsp").forward(request, response);
+			return;
+		}
 		//得票数のカウント
 		for(Player votedPlayer :inPlayerList) {
 			if(votedPlayer.getName().equals(playerName)) {
-				votedPlayer.setVotedCount(0);
+				votedPlayer.setVotedCount(1);
 			}
 		}
 
@@ -62,9 +67,9 @@ public class Vote extends HttpServlet {
 				votePlayer.setVotePlayerName(playerName);
 			}
 		}
-
-		/*Player votedPlayer = pd.selectId(playerid);*/
-
+		Integer I = (Integer)session.getAttribute("i");
+		I++;
+		session.setAttribute("i", I);
 		session.setAttribute("inPlayerList", inPlayerList);
 		response.sendRedirect("PlayerKakunin");
 	}

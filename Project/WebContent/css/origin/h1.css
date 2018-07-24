@@ -1,3 +1,4 @@
+@charset "utf-8";
 h1 {
 	padding: 30px; /*文字の余白*/
 }
@@ -31,12 +32,18 @@ h4 {
 .dekaimoji{
 	font-size:200%
 }
+
 .dekaiyohaku{
 	padding: 200px;
 }
 
 .img-icon {
 	max-height: 50px;
+}
+
+.icon{
+	width: 200px;
+	boxsizing: contain;
 }
 
 body {
@@ -47,3 +54,4 @@ body {
 	/* background-image: url("../../gif/");
  */
 }
+

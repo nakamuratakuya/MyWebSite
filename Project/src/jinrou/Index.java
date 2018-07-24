@@ -57,8 +57,9 @@ public class Index extends HttpServlet {
 
 		String[] playerId =request.getParameterValues("playerId");
 
-		if(playerId==null) {
-			request.setAttribute("errMsg", "なんかおかしいんだよなぁ。");
+		
+		if(playerId==null || playerId.length<3 || playerId.length>7) {
+			request.setAttribute("errMsg", "3~7人選んでください");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Index.jsp");
 			dispatcher.forward(request, response);
 			return;
@@ -67,7 +68,6 @@ public class Index extends HttpServlet {
 		for(String id : playerId) {
 			System.out.println(id);
 			Player player = pd.selectId(id);
-
 			inPlayerList.add(player);
 		}
 
@@ -94,6 +94,8 @@ public class Index extends HttpServlet {
 		}
 
 		session.setAttribute("botiList", botiList);*/
+
+
 		session.setAttribute("inPlayerList",inPlayerList);
 		response.sendRedirect("inPlayer");
 	}

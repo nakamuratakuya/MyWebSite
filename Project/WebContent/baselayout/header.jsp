@@ -15,8 +15,8 @@
 			</ul>
 			<span class="navbar-text">
 				<a href="Index">
-					<font size ="2" color="#f0f8ff">
-						りんくにしたよ
+					<font size ="5" color="#f0f8ff">
+						HOME
 					</font>
 				</a>
 			</span>

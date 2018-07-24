@@ -111,9 +111,9 @@ public class Player {
 
 	public void setVotedCount(int i) {
 		if(i==0) {
-			this.votedCount++;
-		}else {
 			this.votedCount=0;
+		}else {
+			this.votedCount++;
 		}
 	}
 

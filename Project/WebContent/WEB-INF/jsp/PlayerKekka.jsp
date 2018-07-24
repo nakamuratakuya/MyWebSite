@@ -11,16 +11,17 @@
 <link rel="stylesheet" type="text/css" href="css/origin/color.css">
 </head>
 <body>
-<jsp:include page="/baselayout/header.jsp" />
+	<jsp:include page="/baselayout/header.jsp" />
 	<div class="container">
-
+		<div class="mini-yohaku-area"></div>
 		<p>${player.yName}は</p>
+		<div class="yohaku10-area" ></div>
 		<p>${player.yDetail}</p>
+		<div class="yohaku10-area"></div>
 		<c:if test="${player.yName =='人狼'}">
-		<%-- <c:if test=""></c:if> --%>
-		以下の方が人狼です
-		<table class="table table-striped table-dark">
-		<thead>
+			以下の方が人狼です
+			<table class="table table-striped table-dark">
+				<thead>
 					<tr>
 						<th scope="col">playername</th>
 						<th scope="col">icon</th>
@@ -29,10 +30,10 @@
 				<tbody>
 					<!--人数分ループ -->
 					<c:forEach var="player" items="${jinrouList}">
-					<tr>
-						<td>${player.name}</td>
-						<td><img class="img-icon" src="img/${player.icon}" alt="No img"></td>
-					</tr>
+						<tr>
+							<td>${player.name}</td>
+							<td><img class="img-icon" src="img/${player.icon}" alt="No img"></td>
+						</tr>
 					</c:forEach>
 					<!-- ループ終了 -->
 				</tbody>
@@ -40,6 +41,6 @@
 		</c:if>
 		<a class="btn btn-primary"href="PlayerKakunin"role="button">OK!!</a>
 
-	</div>
+</div>
 </body>
 </html>

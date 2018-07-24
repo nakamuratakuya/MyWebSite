@@ -11,12 +11,17 @@
 </head>
 <body>
 	<jsp:include page="/baselayout/header.jsp" />
-	<div class="container">
-
-		<P>${player.name}さんでよろしいですか？？？</P>
-		<p><img class="img-icon" src="img/${player.icon}" alt="No img"></p>
+	<div class="container tyuo-area" >
+		<div class="mini-yohaku-area"></div>
+		<h3>${player.name}さんでよろしいですか？？？</h3>
+		<div class = "mini-yohaku-area"></div>
+		<div >
+			<img class="icon" src="img/${player.icon}" alt="No img">
+		</div>
+		<div class = "mini-yohaku-area"></div>
+		<P>
 		<c:if test="${voteFrg!=null}">
-			<a class="btn btn-primary"href="Vote"role="butten">vote!!</a>
+			<a class="btn btn-primary"href="Vote"role="butten">yes!!</a>
 		</c:if>
 		<c:if test="${voteFrg==null}">
 			<a class="btn btn-primary"href="Koudou"role="butten">yes!!</a>

@@ -15,7 +15,7 @@
 		<div class="container">
 			<p>${player.name}さんの役職は</p>
 			<p>${player.yName}です</p>
-			<p>${player.yComment}www</p>
+			<p>${player.yComment}</p>
 			<p>誰を占いますか？</p>
 			<form method="post" action="Koudou">
 				<table class="table table-striped table-dark">

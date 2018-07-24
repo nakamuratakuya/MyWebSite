@@ -14,9 +14,9 @@
 <body>
 	<jsp:include page="/baselayout/header.jsp" />
 	<div class="container">
+
 		<div class="background-denger">
 			<h1 align="center">player Delete</h1>
-
 
 			<h3>player name: ${player.name}　</h3>
 			<div class="yohaku10-area"></div>
@@ -24,23 +24,17 @@
 
 			<div class="dekaiyohaku">
 				<div class="tyuo-area">
-						<div style="display:inline-flex">
-
+					<div style="display:inline-flex">
 						<form action="Delete" method="post">
 							<input class="btn btn-primary" type="hidden" name="id" value="${player.id}">
 							<input class="btn btn-primary" type="submit" value="yes!">
 						</form>
-
 						<span style="margin-right: 7em;"></span>
-
-						<form action="">
-							<a class="btn btn-success" href="Index" role="button">back</a>
-						</form>
-						</div>
-
+						<a class="btn btn-success" href="Index" role="button">back</a>
+					</div>
 				</div>
 				<p align="left">
-						<a href="Index">"戻る" </a>
+					<a href="Index">"戻る" </a>
 
 			</div>
 		</div>

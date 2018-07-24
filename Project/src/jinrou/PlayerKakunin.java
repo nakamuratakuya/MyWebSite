@@ -46,14 +46,15 @@ public class PlayerKakunin extends HttpServlet {
 		}
 
 		if(i==inPlayerList.size()) {
-			request.getRequestDispatcher("/WEB-INF/jsp/Hanasiai.jsp").forward(request, response);
+			/*request.getRequestDispatcher("/WEB-INF/jsp/Hanasiai.jsp").forward(request, response);*/
+			response.sendRedirect("Hanasiai");
 			return;
 		}
 
 		Player player = inPlayerList.get(i);
-		I++;
+		/*I++;*/
 		session.setAttribute("player", player);
-		session.setAttribute("i", I);
+		/*session.setAttribute("i", I);*/
 		request.getRequestDispatcher("/WEB-INF/jsp/PlayerKakunin.jsp").forward(request, response);
 		return;
 	}

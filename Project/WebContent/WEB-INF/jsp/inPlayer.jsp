@@ -52,7 +52,17 @@
 					<td><img class="img-icon" src="img/${yakusyoku.icon}" alt="No img"></td>
 					<td>${yakusyoku.side}</td>
 					<td>${yakusyoku.detail}</td>
-					<td></td>
+					<td>
+						<c:if test="${yakusyoku.id==1}">
+							${siminCount}人
+						</c:if>
+						<c:if test="${yakusyoku.id==2}">
+							${jinrouCount}人
+						</c:if>
+						<c:if test="${yakusyoku.id==3}">
+							${uranaisiCount}人
+						</c:if>
+					</td>
 				</tr>
 			</c:forEach>
 
@@ -61,7 +71,7 @@
 		<div class="mini-yohaku-area"></div>
 		<form method="post" action="inPlayer">
 			<p align="center">
-				<input type="submit" class="btn btn-danger" value="お、やんのか？？？">
+				<input type="submit" class="btn btn-danger" value="GAME START">
 					<!--  <a class="btn btn-danger" href="PlayerKakunin" role="button">お、やんのか？？？</a> -->
 				</p>
 		</form>

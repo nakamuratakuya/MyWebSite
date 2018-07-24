@@ -35,11 +35,9 @@ public class Shuffle {
 	        	break;
 	        default:
 	            System.out.println("エラー");
-	            break;
+	            return null;
 		   }
-
-
-
+		   
 		   List<Yakusyoku> yakusyokuList = new ArrayList<Yakusyoku>();
  		   for(int i = 0; i < s ;i++) {
  			   YakusyokuDao yd = new YakusyokuDao();

@@ -14,10 +14,11 @@
 <body>
 <jsp:include page="/baselayout/header.jsp" />
 	<div class="container">
-
+		<div class="mini-yohaku-area"></div>
 		<p>${player.name}さんの役職は${player.yName}です</p>
 		<p><img class="img-icon" src="img/${player.yIcon}"></p>
 		<p>${player.yComment}</p>
+		<div class="yohaku10-area"></div>
 		<a class="btn btn-primary"href="PlayerKekka"role="button">ok!!</a>
 
 	</div>

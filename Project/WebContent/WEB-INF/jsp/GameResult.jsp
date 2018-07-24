@@ -14,75 +14,82 @@
 	<jsp:include page="/baselayout/header.jsp" />
 	<div class="container ">
 		<h2>${winSide}</h2>
-		<table class="table table-striped table-dark">
-				<thead>
-					<tr>
-						<th scope="col">市民側</th>
-						<th scope="col">playername</th>
-						<th scope="col">icon</th>
-						<th scope="col">役職</th>
-						<th scope="col">投票先</th>
-					</tr>
-				</thead>
-					<tbody>
-						<c:forEach var="player" items="${inPlayerList}">
-							<c:if test="${player.yId != 2}">
-								<tr>
-									<th></th>
-									<th scope="row">${player.name }</th>
-									<td><img class="img-icon" src="img/${player.icon}" alt="No img"></td>
-									<td>${player.yName}</td>
-									<td>${player.votePlayerName}</td>
-								</tr>
-							</c:if>
-						</c:forEach>
-					</tbody>
-				</table>
 
 		<table class="table table-striped table-dark">
-				<thead>
-					<tr>
-						<th scope="col"	>人狼側</th>
-						<th scope="col">playername</th>
-						<th scope="col">icon</th>
-						<th scope="col">役職</th>
-						<th scope="col">投票先</th>
-					</tr>
-				</thead>
-					<tbody>
-					<c:forEach var="player" items="${inPlayerList}">
-							<c:if test="${player.yId == 2}">
-								<tr>
-									<th></th>
-									<th scope="row">${player.name }</th>
-									<td><img class="img-icon" src="img/${player.icon}" alt="No img"></td>
-									<td>${player.yName}</td>
-									<td>${player.votePlayerName}</td>
-								</tr>
-							</c:if>
-						</c:forEach>
-					</tbody>
-				</table>
+			<thead>
+				<tr>
+					<th scope="col">市民側</th>
+					<th scope="col">playername</th>
+					<th scope="col">icon</th>
+					<th scope="col">役職</th>
+					<th scope="col">投票先</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="player" items="${inPlayerList}">
+					<c:if test="${player.yId != 2}">
+						<tr>
+							<th></th>
+							<th scope="row">${player.name }</th>
+							<td><img class="img-icon" src="img/${player.icon}" alt="No img"></td>
+							<td>${player.yName}</td>
+							<td>${player.votePlayerName}</td>
+						</tr>
+					</c:if>
+				</c:forEach>
+			</tbody>
+		</table>
 
-				<table class="table table-striped table-dark">
-				<thead>
-					<tr>
-						<th scope="col"	>墓地</th>
-						<th scope="col">役職</th>
-					</tr>
-				</thead>
-					<tbody>
-						<c:forEach var="boti" items="${botiList}">
-							<tr>
-								<th></th>
-								<td>${boti.name}</td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+		<table class="table table-striped table-dark">
+			<thead>
+				<tr>
+					<th scope="col"	>人狼側</th>
+					<th scope="col">playername</th>
+					<th scope="col">icon</th>
+					<th scope="col">役職</th>
+					<th scope="col">投票先</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="player" items="${inPlayerList}">
+					<c:if test="${player.yId == 2}">
+						<tr>
+							<th></th>
+							<th scope="row">${player.name }</th>
+							<td><img class="img-icon" src="img/${player.icon}" alt="No img"></td>
+							<td>${player.yName}</td>
+							<td>${player.votePlayerName}</td>
+						</tr>
+					</c:if>
+				</c:forEach>
+			</tbody>
+		</table>
 
+		<table class="table table-striped table-dark">
+			<thead>
+				<tr>
+					<th scope="col"	>墓地</th>
+					<th scope="col">役職</th>
+					<th scope="col">icon</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="boti" items="${botiList}">
+					<tr>
+						<th></th>
+						<td>${boti.name}</td>
+						<td><img class="img-icon" src="img/${boti.icon}"></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+
+		<div class="tyuo-area">
 			<a class="btn btn-primary"href="inPlayer"role="button">one more</a>
+			<span style="margin-right: 7em;"></span>
 			<a class="btn btn-primary"href="Index"role="button">end</a>
+
+		</div>
 	</div>
 </body>
 </html>

@@ -13,33 +13,7 @@
 </head>
 <body>
 
-
-	<nav class="navbar navbar-expand-lg navbar-light header">
-		<div class="collapse navbar-collapse container" id="navbarText">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">Jinrou</li>
-			</ul>
-			<span class="navbar-text">
-				<a href="#">
-					<font size ="3" color="#f0f8ff">
-						りんくにしたよ
-					</font>
-				</a>
-			</span>
-		</div>
-	</nav>
-
-
-	<!-- <div class="header">
-	<div class="container">
-		    jinrou
-			<span style="margin-right: 15em;"></span>
-			<a href="#">
-				<font size="5" >modoru
-				</font>
-			</a>
-			</div>
-	</div> -->
+	<jsp:include page="/baselayout/header.jsp" />
 
 	<div class="container">
 
