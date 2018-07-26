@@ -17,8 +17,8 @@
 
 		<div class="background-denger">
 			<h1 align="center">player Delete</h1>
-
-			<h3>player name: ${player.name}　</h3>
+			<div class="yohaku10-area"></div>
+			<h3 align="center">player name: ${player.name}　</h3>
 			<div class="yohaku10-area"></div>
 			<h3 align="center">ほんとに削除してよろしいでしょうか。</h3>
 
@@ -34,7 +34,7 @@
 					</div>
 				</div>
 				<p align="left">
-					<a href="Index">"戻る" </a>
+				<!-- 	<a href="Index">"戻る" </a> -->
 
 			</div>
 		</div>

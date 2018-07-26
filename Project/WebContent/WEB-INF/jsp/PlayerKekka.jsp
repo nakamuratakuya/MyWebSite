@@ -13,7 +13,7 @@
 <body>
 	<jsp:include page="/baselayout/header.jsp" />
 	<div class="container">
-		<div class="mini-yohaku-area"></div>
+		<div class="yohaku10-area"></div>
 		<p>${player.yName}は</p>
 		<div class="yohaku10-area" ></div>
 		<p>${player.yDetail}</p>
@@ -39,7 +39,12 @@
 				</tbody>
 			</table>
 		</c:if>
-		<a class="btn btn-primary"href="PlayerKakunin"role="button">OK!!</a>
+		<div class="yohaku10-area"></div>
+		<form method="post" action="PlayerKekka">
+			<input type="submit" class="btn btn-primary" value=OK!!>
+			<!-- <a class="btn btn-primary"href="PlayerKakunin" role="button">OK!!</a> -->
+		</form>
+
 
 </div>
 </body>

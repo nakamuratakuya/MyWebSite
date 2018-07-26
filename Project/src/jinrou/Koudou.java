@@ -34,9 +34,7 @@ public class Koudou extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		Player player = (Player) session.getAttribute("player");
-		Integer I =(Integer)session.getAttribute("i");
-		I++;
-		session.setAttribute("i", I);
+		
 		if(player.getyName().equals("占い師")) {
 			request.getRequestDispatcher("/WEB-INF/jsp/Uranaisi.jsp").forward(request, response);
 			return;

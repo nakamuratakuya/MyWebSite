@@ -13,13 +13,16 @@
 <body>
 	<jsp:include page="/baselayout/header.jsp" />
 		<div class="container ">
+		<div class="yohaku10-area"></div>
 			<c:if test="${boti == null}">
 				<p>${divinedPlayer.name}さんの役職はこんなカンジです</p>
+				<div class="yohaku10-area"></div>
 				<p>${divinedPlayer.yName}</p>
 			</c:if>
 
 			<c:if test="${boti != null}">
 			<p>墓地にある役職はこんなカンジです</p>
+			<div class="yohaku10-area"></div>
 				<table class="table table-striped table-dark">
 						<thead>
 							<tr>
@@ -42,7 +45,12 @@
 					</tbody>
 					</table>
 			</c:if>
-			<a class="btn btn-primary"href="PlayerKakunin"role="button">ok!!</a>
+			<div class="yohaku10-area"></div>
+			<form method="post" action="PlayerKekka">
+			<input type="submit" class="btn btn-primary" value=OK!!>
+			<!-- <a class="btn btn-primary"href="PlayerKakunin" role="button">OK!!</a> -->
+		</form>
+
 		</div>
 </body>
 </html>

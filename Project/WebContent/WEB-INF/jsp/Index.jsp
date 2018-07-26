@@ -16,7 +16,7 @@
 	<jsp:include page="/baselayout/header.jsp" />
 
 	<div class="container">
-
+	<div class="yohaku10-area"></div>
 		<p>参加者を選んで下さい</p>
 		<div class="yohaku10-area"></div>
 		<a href="Regist">新規登録</a>
@@ -28,7 +28,7 @@
 						<th scope="col">参加</th>
 						<th scope="col">playername</th>
 						<th scope="col">icon</th>
-						<th scope="col"></th>
+						<th scope="col">controller</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -39,7 +39,8 @@
 						<td>${player.name}</td>
 						<td><img class="img-icon" src="img/${player.icon}" alt="No img"></td>
 						<td><a class="btn btn-primary" href="Info?id=${player.id}" role="button">info</a>
-							<a class="btn btn-danger" href="Delete?id=${player.id}" role="button">delete</a></td>
+						<span style="margin-right: 1em;"></span>
+						<a class="btn btn-danger" href="Delete?id=${player.id}" role="button">delete</a></td>
 					</tr>
 					</c:forEach>
 					<!-- ループ終了 -->
@@ -50,7 +51,7 @@
 				<div class="alert alert-danger" role="alert">${errMsg}</div>
 			</c:if>
 			<p align="center">
-				<input type="submit" class="btn btn-primary" value="sanka">
+				<input type="submit" class="btn btn-primary" value="Let's play!!">
 			</p>
 		</form>
 	</div>

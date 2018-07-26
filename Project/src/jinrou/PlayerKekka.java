@@ -49,6 +49,11 @@ public class PlayerKekka extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		Integer I =(Integer)session.getAttribute("i");
+		I++;
+		session.setAttribute("i", I);
+		response.sendRedirect("PlayerKakunin");
 	}
 
 }

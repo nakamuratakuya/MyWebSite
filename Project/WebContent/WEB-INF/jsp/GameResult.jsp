@@ -13,7 +13,7 @@
 <body>
 	<jsp:include page="/baselayout/header.jsp" />
 	<div class="container ">
-		<h2>${winSide}</h2>
+		<h1>${winSide}</h1>
 
 		<table class="table table-striped table-dark">
 			<thead>
@@ -83,8 +83,8 @@
 				</c:forEach>
 			</tbody>
 		</table>
-
-		<div class="tyuo-area">
+		<div class="yohaku10-area"></div>
+		<div class="tyuo-area ">
 			<a class="btn btn-primary"href="inPlayer"role="button">one more</a>
 			<span style="margin-right: 7em;"></span>
 			<a class="btn btn-primary"href="Index"role="button">end</a>

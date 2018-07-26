@@ -52,9 +52,9 @@ public class PlayerKakunin extends HttpServlet {
 		}
 
 		Player player = inPlayerList.get(i);
-		/*I++;*/
+
+
 		session.setAttribute("player", player);
-		/*session.setAttribute("i", I);*/
 		request.getRequestDispatcher("/WEB-INF/jsp/PlayerKakunin.jsp").forward(request, response);
 		return;
 	}

@@ -13,10 +13,12 @@
 <body>
 	<jsp:include page="/baselayout/header.jsp" />
 		<div class="container">
+		<div class="yohaku10-area"></div>
 			<p>${player.name}さんの役職は</p>
 			<p>${player.yName}です</p>
 			<p>${player.yComment}</p>
 			<p>誰を占いますか？</p>
+			<div class="yohaku10-area"></div>
 			<form method="post" action="Koudou">
 				<table class="table table-striped table-dark">
 						<thead>
@@ -46,6 +48,7 @@
 							</tr>
 						</tbody>
 				</table>
+				<div class="yohaku10-area"></div>
 				<c:if test="${errMsg != null}">
 					<div class="alert alert-danger" role="alert">${errMsg}</div>
 				</c:if>

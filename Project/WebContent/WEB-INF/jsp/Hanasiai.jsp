@@ -13,6 +13,7 @@
 <body>
 <jsp:include page="/baselayout/header.jsp" />
 	<div class="container">
+	<div class="yohaku10-area"></div>
 		<p>村人全員の行動が完了しました </p>
 		<p>次にだれをつるし上げるか、時間内で話し合ってください</p>
 
@@ -64,8 +65,10 @@
 			</tbody>
 		</table>
 
-		<form method="post" action="PlayerKakunin">
-			<input type="submit" id="vote" class="btn btn-primary" value="vote" name="voteFrg">
+		<form method="post" action="PlayerKakunin" >
+			<p align="center">
+				<input type="submit"  id="vote" class="btn btn-primary" value="vote" name="voteFrg">
+			</p>
 		</form>
 
 	</div>
