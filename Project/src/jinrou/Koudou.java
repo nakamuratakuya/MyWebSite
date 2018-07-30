@@ -34,11 +34,13 @@ public class Koudou extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		Player player = (Player) session.getAttribute("player");
-		
+
+		//役職が占い師の場合専用のページに遷移
 		if(player.getyName().equals("占い師")) {
 			request.getRequestDispatcher("/WEB-INF/jsp/Uranaisi.jsp").forward(request, response);
 			return;
 		}
+
 		request.getRequestDispatcher("/WEB-INF/jsp/Koudou.jsp").forward(request, response);
 	}
 
@@ -50,13 +52,15 @@ public class Koudou extends HttpServlet {
 		HttpSession session = request.getSession();
 		String id = request.getParameter("playerId");
 		List<Player> inPlayerList = (List<Player>)session.getAttribute("inPlayerList");
-		//占いの
+
+		//エラーメッセージ
 		if(id==null) {
 			request.setAttribute("errMsg", "占ってください");
 			request.getRequestDispatcher("/WEB-INF/jsp/Uranaisi.jsp").forward(request, response);
 			return;
 		}
 
+		//占いの対象を取得
 		if(id.equals("boti")) {
 			String boti = "boti";
 			request.setAttribute("boti", boti);
@@ -69,6 +73,7 @@ public class Koudou extends HttpServlet {
 				}
 			}
 		}
+
 		request.getRequestDispatcher("/WEB-INF/jsp/UranaiKekka.jsp").forward(request, response);
 	}
 

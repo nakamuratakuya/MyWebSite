@@ -91,7 +91,7 @@ public class inPlayer extends HttpServlet {
 
 		//墓地を用意
 		List<Boti> botiList = new ArrayList<Boti>();
-
+		
 		for(Yakusyoku yakusyoku :ShuffledYakusyokuList) {
 		   Boti boti = new Boti();
 		   boti.setName(yakusyoku.getName());

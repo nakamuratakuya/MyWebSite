@@ -55,9 +55,10 @@ public class Index extends HttpServlet {
 		List<Player> inPlayerList = new ArrayList<Player>();
 		PlayerDao pd = new PlayerDao();
 
+		//チェックボックスからplayerIdを取得
 		String[] playerId =request.getParameterValues("playerId");
 
-		
+		//エラーメッセージ
 		if(playerId==null || playerId.length<3 || playerId.length>7) {
 			request.setAttribute("errMsg", "3~7人選んでください");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Index.jsp");
@@ -65,12 +66,16 @@ public class Index extends HttpServlet {
 			return;
 		}
 
+		//参加するプレイヤーをリスト化
 		for(String id : playerId) {
 			System.out.println(id);
 			Player player = pd.selectId(id);
 			inPlayerList.add(player);
 		}
-
+		
+		
+		//以下の作業はinPlayerに移送
+		
 		/*Shuffle shuffle = new Shuffle();
 		List<Yakusyoku> yakusyokuList = new ArrayList<Yakusyoku>();
 		yakusyokuList =  shuffle.yakusyokuShuffle(inPlayerList.size());
