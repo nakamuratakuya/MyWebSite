@@ -48,6 +48,7 @@ public class inPlayer extends HttpServlet {
 		session.removeAttribute("siminCuont");
 		session.removeAttribute("jinrouCount");
 		session.removeAttribute("uranaisiCount");
+		session.removeAttribute("teruteruCount");
 
 		//得票数やらのリセット
 		for(Player player : inPlayerList) {
@@ -68,6 +69,7 @@ public class inPlayer extends HttpServlet {
 		Integer siminCount=0;
 		Integer jinrouCount=0;
 		Integer uranaisiCount=0;
+		Integer teruteruCount=0;
 		for(Yakusyoku yakusyoku :ShuffledYakusyokuList) {
 			if(yakusyoku.getName().equals("市民")) {
 				siminCount++;
@@ -75,6 +77,8 @@ public class inPlayer extends HttpServlet {
 				jinrouCount++;
 			}else if(yakusyoku.getName().equals("占い師")) {
 				uranaisiCount++;
+			}else if(yakusyoku.getName().equals("てるてる")) {
+				teruteruCount++;
 			}
 		}
 
@@ -86,12 +90,12 @@ public class inPlayer extends HttpServlet {
 			player.setyComment(ShuffledYakusyokuList.get(0).getComment());
 			player.setyIcon(ShuffledYakusyokuList.get(0).getIcon());
 			ShuffledYakusyokuList.remove(0);
-			System.out.println(player.getyName()+"player");
+			System.out.println(player.getyName()+player.getyId()+"player");
 		}
 
 		//墓地を用意
 		List<Boti> botiList = new ArrayList<Boti>();
-		
+
 		for(Yakusyoku yakusyoku :ShuffledYakusyokuList) {
 		   Boti boti = new Boti();
 		   boti.setName(yakusyoku.getName());
@@ -106,6 +110,7 @@ public class inPlayer extends HttpServlet {
 		session.setAttribute("siminCount", siminCount);
 		session.setAttribute("jinrouCount", jinrouCount);
 		session.setAttribute("uranaisiCount", uranaisiCount);
+		session.setAttribute("teruteruCount", teruteruCount);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/inPlayer.jsp");
 		dispatcher.forward(request, response);
 

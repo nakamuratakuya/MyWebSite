@@ -20,7 +20,6 @@
 		<p>${player.yComment}</p>
 		<div class="yohaku10-area"></div>
 		<a class="btn btn-primary"href="PlayerKekka"role="button">ok!!</a>
-
 	</div>
 </body>
 </html>

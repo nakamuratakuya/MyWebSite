@@ -63,6 +63,9 @@
 							<c:if test="${yakusyoku.id==3}">
 								${uranaisiCount}人
 							</c:if>
+							<c:if test="${yakusyoku.id==4}">
+								${teruteruCount}人
+							</c:if>
 						</td>
 					</tr>
 				</c:forEach>

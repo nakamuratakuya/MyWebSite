@@ -12,7 +12,6 @@
 
 </head>
 <body>
-
 	<jsp:include page="/baselayout/header.jsp" />
 
 	<div class="container">
@@ -34,14 +33,14 @@
 				<tbody>
 					<!--人数分ループ -->
 					<c:forEach var="player" items="${playerList}" >
-					<tr>
-						<th><input type="checkbox" value="${player.id}" name="playerId"></th>
-						<td>${player.name}</td>
-						<td><img class="img-icon" src="img/${player.icon}" alt="No img"></td>
-						<td><a class="btn btn-primary" href="Info?id=${player.id}" role="button">info</a>
-						<span style="margin-right: 1em;"></span>
-						<a class="btn btn-danger" href="Delete?id=${player.id}" role="button">delete</a></td>
-					</tr>
+						<tr>
+							<th><input type="checkbox" value="${player.id}" name="playerId"></th>
+							<td>${player.name}</td>
+							<td><img class="img-icon" src="img/${player.icon}" alt="No img"></td>
+							<td><a class="btn btn-primary" href="Info?id=${player.id}" role="button">info</a>
+							<span style="margin-right: 1em;"></span>
+							<a class="btn btn-danger" href="Delete?id=${player.id}" role="button">delete</a></td>
+						</tr>
 					</c:forEach>
 					<!-- ループ終了 -->
 				</tbody>

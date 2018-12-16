@@ -11,19 +11,21 @@ public class Yakusyoku {
 	public Yakusyoku(int id,String name,int side,String detail, String comment, String icon) {
 		this.id = id;
 		this.name = name;
-		
+
+		//市民側
 		if(side==0) {
 			this.side = "市民側";
 		}
 		
+		//人狼側
 		else if(side==1) {
 			this.side = "人狼側";
 		}
 
 		//第三勢力
-		/*else if(side==2) {
+		else if(side==2) {
 			this.side = "第三勢力";
-		}*/
+		}
 
 		this.detail = detail;
 		this.comment = comment;
